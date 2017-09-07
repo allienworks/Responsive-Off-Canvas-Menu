@@ -15,21 +15,12 @@
         @include visuallyhidden;
     }
 
-    ul {
-        text-align: center;
-        white-space: nowrap;
-    }
+}
 
-    li {
-        display: inline-block;
-        border-right: 1px solid rgba(255,255,255, 0.1);
+.sidebar {
+    float: left; width: 30%;
+}
 
-        &:last-child {
-            border-right: none;
-        }
-
-        a {
-            padding: pem(6, 14) pem(12, 14);
-        }
-    }
+#main {
+    float: left; width: 65%; margin-left: 5%;
 }
