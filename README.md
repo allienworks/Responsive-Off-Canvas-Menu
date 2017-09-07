@@ -11,7 +11,7 @@ Copyright © David Bushell | BSD & MIT license
 Todo
 ----
 
-* [ ] vyhodit compass dependency a vyhazet jeho mixiny
+* [x] vyhodit compass dependency a vyhazet jeho mixiny
 
 
 Development
