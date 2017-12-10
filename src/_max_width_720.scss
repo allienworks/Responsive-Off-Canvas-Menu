@@ -1,66 +1,4 @@
-$nav-off-canvas-width: 70%;
 
-header {
-	padding: 1.5rem 1rem;
-}
-
-#nav {
-	position: absolute;
-	top: 0;
-	padding-top: pem(84);
-
-	&:not(:target) {
-		z-index: 1;
-		height: 0;
-	}
-
-	&:target {
-		.close-btn {
-			display: block;
-		}
-	}
-
-	.close-btn {
-		position: absolute;
-		top: pem(-60);
-		left: pem(30);
-	}
-
-	.section {
-   	padding: pem(12, 14) pem(30, 14);
-	}
-
-	.block {
-		position: relative;
-		padding: 0;
-	}
-
-	li {
-		position: relative;
-		border-top: 1px solid rgba(255,255,255, 0.1);
-
-		&:last-child {
-			border-bottom: 1px solid rgba(255,255,255, 0.1);
-		}
-
-		&.is-active:after {
-			z-index: 50;
-			display: block;
-			content: "";
-			position: absolute;
-			top: 50%;
-			right: pem(-0.5);
-			margin-top: pem(-10);
-			border-top: pem(10) transparent solid;
-			border-bottom: pem(10) transparent solid;
-			border-right: pem(10) #fff solid;
-		}
-
-		a {
-			padding: pem(12, 14) pem(30, 14);
-		}
-	}
-}
 
 
 
@@ -68,8 +6,8 @@ header {
 
 	#nav {
 		height: 100%;
-		width: $nav-off-canvas-width;
-		left: (0 - $nav-off-canvas-width);
+		width: $off-canvas-width;
+		left: (0 - $off-canvas-width);
 		background: $bg;
 		box-shadow: inset pem(-24) 0 pem(24) pem(-12) rgba(0,0,0, 0.25);
 
@@ -98,7 +36,7 @@ header {
 .js-nav {
 
 	#inner-wrap {
-		left: $nav-off-canvas-width;
+		left: $off-canvas-width;
 	}
 }
 
@@ -113,7 +51,7 @@ header {
 		.block {
 			opacity: 0.7;
 			transition: opacity 300ms 100ms ease, transform 500ms ease;
-			transform: translate3d($nav-off-canvas-width,0,0) scale3d(0.9,0.9,0.9);
+			transform: translate3d($off-canvas-width,0,0) scale3d(0.9,0.9,0.9);
 			transform-origin: 50%, 0%;
 		}
 
@@ -136,6 +74,6 @@ header {
 		}
 	}
 	#inner-wrap {
-		transform: translate3d($nav-off-canvas-width,0,0) scale3d(1,1,1);
+		transform: translate3d($off-canvas-width,0,0) scale3d(1,1,1);
 	}
 }

@@ -31,3 +31,39 @@
 	position: absolute;
 	width: 1px;
 }
+
+
+// BRICKst: media querry mixin
+
+$break-m: 45rem !default; // medium, 720px
+
+@mixin break($media) {
+	@if $media == s { 
+		@media only screen and (min-width: $break-s) { @content; }
+	}
+	@else if $media == m {
+		@media only screen and (min-width: $break-m) { @content; }
+	}
+	@else if $media == t {
+		@media only screen and (min-width: $break-t) { @content; }
+	}
+	@else if $media == l {
+		@media only screen and (min-width: $break-l) { @content; }
+	}
+	@else if $media == xl {
+		@media only screen and (min-width: $break-xl) { @content; }
+	}
+
+	@else if $media == "lt-m" {
+		@media only screen and (max-width: $break-m) { @content; }
+	}
+	@else if $media == "lt-t" {
+		@media only screen and (max-width: $break-t) { @content; }
+	}
+	@else if $media == "lt-l" {
+		@media only screen and (max-width: $break-l) { @content; }
+	}
+	@else if $media == "lt-xl" {
+		@media only screen and (max-width: $break-xl) { @content; }
+	}
+ }
