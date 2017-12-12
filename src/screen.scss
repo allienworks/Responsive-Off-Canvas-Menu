@@ -5,9 +5,4 @@
 
 @import "normalize";
 @import "mixins";
-@import "base";
-
-
-@media screen and (max-width: 45em) {
-  @import "max_width_720";
-}
+@import "off-canvas-menu";

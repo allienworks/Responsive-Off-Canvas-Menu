@@ -232,12 +232,12 @@ table {
   border-spacing: 0;
 }
 
-/* line 11, ../src/_base.scss */
+/* line 11, ../src/_off-canvas-menu.scss */
 html {
   font-size: 16px;
 }
 
-/* line 14, ../src/_base.scss */
+/* line 14, ../src/_off-canvas-menu.scss */
 body {
   color: #333;
   position: relative;
@@ -246,24 +246,24 @@ body {
   background: #333;
 }
 
-/* line 21, ../src/_base.scss */
+/* line 21, ../src/_off-canvas-menu.scss */
 ul, ol {
   padding: 0;
   list-style: none;
 }
 
-/* line 26, ../src/_base.scss */
+/* line 26, ../src/_off-canvas-menu.scss */
 h1, h2, h3, h4, h5, h6, p, ul, ol {
   margin: 0;
 }
 
-/* line 30, ../src/_base.scss */
+/* line 30, ../src/_off-canvas-menu.scss */
 a {
   text-decoration: none;
 }
 
 @media only screen and (min-width: 45rem) {
-  /* line 37, ../src/_base.scss */
+  /* line 37, ../src/_off-canvas-menu.scss */
   .sidebar {
     float: left;
     width: 30%;
@@ -271,7 +271,7 @@ a {
 }
 
 @media only screen and (min-width: 45rem) {
-  /* line 43, ../src/_base.scss */
+  /* line 43, ../src/_off-canvas-menu.scss */
   #main {
     float: left;
     width: 65%;
@@ -279,19 +279,46 @@ a {
   }
 }
 
-/* line 52, ../src/_base.scss */
+/* line 52, ../src/_off-canvas-menu.scss */
 #outer-wrap {
   position: relative;
   overflow: hidden;
   width: 100%;
 }
-/* line 55, ../src/_base.scss */
-#outer-wrap #inner-wrap {
+
+/* line 56, ../src/_off-canvas-menu.scss */
+#inner-wrap {
   position: relative;
   width: 100%;
 }
+/* line 59, ../src/_off-canvas-menu.scss */
+.js-ready #inner-wrap {
+  left: 0;
+}
+/* line 60, ../src/_off-canvas-menu.scss */
+.js-nav #inner-wrap {
+  left: 70%;
+}
+/* line 61, ../src/_off-canvas-menu.scss */
+.csstransforms3d.csstransitions.js-ready #inner-wrap {
+  left: 0 !important;
+  transform: translate3d(0, 0, 0);
+  transition: transform 500ms ease;
+  backface-visibility: hidden;
+}
+/* line 67, ../src/_off-canvas-menu.scss */
+.csstransforms3d.csstransitions.js-nav #inner-wrap {
+  transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+}
+@media only screen and (min-width: 45rem) {
+  /* line 67, ../src/_off-canvas-menu.scss */
+  .csstransforms3d.csstransitions.js-nav #inner-wrap {
+    transform: none;
+    transition: none;
+  }
+}
 
-/* line 61, ../src/_base.scss */
+/* line 73, ../src/_off-canvas-menu.scss */
 .nav-btn,
 .close-btn {
   display: block;
@@ -306,14 +333,14 @@ a {
   outline: none;
   -webkit-tap-highlight-color: transparent;
 }
-/* line 69, ../src/_base.scss */
+/* line 80, ../src/_off-canvas-menu.scss */
 .nav-btn:hover, .nav-btn:focus,
 .close-btn:hover,
 .close-btn:focus {
   opacity: 1;
 }
 
-/* line 76, ../src/_base.scss */
+/* line 87, ../src/_off-canvas-menu.scss */
 #top {
   position: relative;
   z-index: 100;
@@ -321,7 +348,7 @@ a {
   background: #333;
   padding: 1.5rem 1rem;
 }
-/* line 81, ../src/_base.scss */
+/* line 92, ../src/_off-canvas-menu.scss */
 #top .block-title {
   margin: 0;
   font-size: 1.875em;
@@ -329,7 +356,7 @@ a {
   text-align: center;
   white-space: nowrap;
 }
-/* line 85, ../src/_base.scss */
+/* line 96, ../src/_off-canvas-menu.scss */
 #top .nav-btn {
   position: absolute;
   top: 1.5em;
@@ -337,12 +364,12 @@ a {
   background: #333 url("../img/nav-icon.svg") left center no-repeat;
   opacity: 0.7;
 }
-/* line 90, ../src/_base.scss */
+/* line 101, ../src/_off-canvas-menu.scss */
 .no-svg #top .nav-btn {
   background-image: url("../img/nav-icon.png");
 }
 @media only screen and (min-width: 45rem) {
-  /* line 85, ../src/_base.scss */
+  /* line 96, ../src/_off-canvas-menu.scss */
   #top .nav-btn {
     border: 0;
     clip: rect(0 0 0 0);
@@ -355,7 +382,7 @@ a {
   }
 }
 
-/* line 98, ../src/_base.scss */
+/* line 109, ../src/_off-canvas-menu.scss */
 #nav {
   position: absolute;
   top: 0;
@@ -367,37 +394,99 @@ a {
   background: #333;
 }
 @media only screen and (min-width: 45rem) {
-  /* line 98, ../src/_base.scss */
+  /* line 109, ../src/_off-canvas-menu.scss */
   #nav {
     position: relative;
     padding-top: 0;
   }
 }
-/* line 107, ../src/_base.scss */
+/* line 116, ../src/_off-canvas-menu.scss */
 #nav:not(:target) {
   z-index: 1;
   height: 0;
 }
 @media only screen and (min-width: 45rem) {
-  /* line 107, ../src/_base.scss */
+  /* line 116, ../src/_off-canvas-menu.scss */
   #nav:not(:target) {
     height: auto;
   }
 }
-/* line 112, ../src/_base.scss */
+/* line 121, ../src/_off-canvas-menu.scss */
 #nav:target .close-btn {
   display: block;
 }
-/* line 116, ../src/_base.scss */
+/* line 123, ../src/_off-canvas-menu.scss */
+.js-ready #nav {
+  width: 70%;
+  height: 100%;
+  left: -70%;
+  background: #333;
+  box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.25);
+}
+@media only screen and (min-width: 45rem) {
+  /* line 123, ../src/_off-canvas-menu.scss */
+  .js-ready #nav {
+    width: auto;
+    height: auto;
+    left: auto;
+    box-shadow: none;
+  }
+}
+/* line 132, ../src/_off-canvas-menu.scss */
+.js-ready #nav .block {
+  background: transparent;
+}
+/* line 133, ../src/_off-canvas-menu.scss */
+.js-ready #nav .close-btn {
+  display: block;
+  opacity: 0.7;
+}
+/* line 136, ../src/_off-canvas-menu.scss */
+.js-ready #nav .close-btn:focus, .js-ready #nav .close-btn:hover {
+  opacity: 1;
+}
+/* line 140, ../src/_off-canvas-menu.scss */
+.csstransforms3d.csstransitions.js-ready #nav {
+  left: 0;
+  transform: translate3d(-100%, 0, 0);
+  backface-visibility: hidden;
+}
+@media only screen and (min-width: 45rem) {
+  /* line 140, ../src/_off-canvas-menu.scss */
+  .csstransforms3d.csstransitions.js-ready #nav {
+    transform: translate3d(0, 0, 0);
+  }
+}
+/* line 145, ../src/_off-canvas-menu.scss */
+.csstransforms3d.csstransitions.js-ready #nav .block {
+  opacity: 0.7;
+  transition: opacity 300ms 100ms ease, transform 500ms ease;
+  transform: translate3d(70%, 0, 0) scale3d(0.9, 0.9, 0.9);
+  transform-origin: 50%, 0%;
+}
+@media only screen and (min-width: 45rem) {
+  /* line 145, ../src/_off-canvas-menu.scss */
+  .csstransforms3d.csstransitions.js-ready #nav .block {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    transition: none;
+  }
+}
+/* line 158, ../src/_off-canvas-menu.scss */
+.csstransforms3d.csstransitions.js-nav #nav .block {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+/* line 165, ../src/_off-canvas-menu.scss */
 #nav .close-btn {
   background: #333 url("../img/close-btn.svg") left center no-repeat;
-  opacity: 1;
   position: absolute;
   top: -3.75em;
   left: 1.875em;
+  opacity: 1;
 }
 @media only screen and (min-width: 45rem) {
-  /* line 116, ../src/_base.scss */
+  /* line 165, ../src/_off-canvas-menu.scss */
   #nav .close-btn {
     border: 0;
     clip: rect(0 0 0 0);
@@ -409,16 +498,16 @@ a {
     width: 1px;
   }
 }
-/* line 126, ../src/_base.scss */
+/* line 171, ../src/_off-canvas-menu.scss */
 .no-svg #nav .close-btn {
   background-image: url("../img/close-btn.png");
 }
-/* line 129, ../src/_base.scss */
+/* line 174, ../src/_off-canvas-menu.scss */
 #nav .block {
   position: relative;
   padding: 0;
 }
-/* line 132, ../src/_base.scss */
+/* line 177, ../src/_off-canvas-menu.scss */
 #nav .block .block-title {
   border: 0;
   clip: rect(0 0 0 0);
@@ -429,134 +518,70 @@ a {
   position: absolute;
   width: 1px;
 }
-/* line 133, ../src/_base.scss */
+/* line 178, ../src/_off-canvas-menu.scss */
 #nav .block .section {
   padding: 0.85714em 2.14286em;
 }
-/* line 138, ../src/_base.scss */
-#nav ul {
+/* line 182, ../src/_off-canvas-menu.scss */
+#nav .block ul {
   *zoom: 1;
   display: block;
 }
 /* line 6, ../src/_mixins.scss */
-#nav ul:before, #nav ul:after {
+#nav .block ul:before, #nav .block ul:after {
   content: "";
   display: table;
 }
 /* line 11, ../src/_mixins.scss */
-#nav ul:after {
+#nav .block ul:after {
   clear: both;
 }
-/* line 142, ../src/_base.scss */
-#nav li {
+/* line 186, ../src/_off-canvas-menu.scss */
+#nav .block li {
   display: block;
   position: relative;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* line 146, ../src/_base.scss */
-#nav li:last-child {
+/* line 190, ../src/_off-canvas-menu.scss */
+#nav .block li:last-child {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* line 149, ../src/_base.scss */
-#nav li.is-active:after {
-  z-index: 50;
-  display: block;
+/* line 193, ../src/_off-canvas-menu.scss */
+#nav .block li.is-active:after {
   content: "";
+  display: block;
+  margin-top: -0.625em;
   position: absolute;
   top: 50%;
   right: -0.03125em;
-  margin-top: -0.625em;
+  z-index: 50;
   border-top: 0.625em transparent solid;
   border-bottom: 0.625em transparent solid;
   border-right: 0.625em #fff solid;
 }
-/* line 161, ../src/_base.scss */
-#nav li a {
+/* line 201, ../src/_off-canvas-menu.scss */
+#nav .block li a {
   display: block;
   padding: 0.85714em 2.14286em;
   color: #ccc;
   outline: none;
 }
-/* line 165, ../src/_base.scss */
-#nav li a:focus, #nav li a:hover {
+/* line 205, ../src/_off-canvas-menu.scss */
+#nav .block li a:focus, #nav .block li a:hover {
   color: #fff;
   background: #444;
 }
 
-/* line 174, ../src/_base.scss */
+/* line 215, ../src/_off-canvas-menu.scss */
 #main {
   background: #fff;
 }
-/* line 176, ../src/_base.scss */
+/* line 217, ../src/_off-canvas-menu.scss */
 #main .block {
   padding: 2.625em 1.875em;
 }
 
-/* line 184, ../src/_base.scss */
+/* line 225, ../src/_off-canvas-menu.scss */
 footer[role="contentinfo"] {
   background: #ddd;
-}
-
-@media screen and (max-width: 45em) {
-  /* line 7, ../src/_max_width_720.scss */
-  .js-ready #nav {
-    height: 100%;
-    width: 70%;
-    left: -70%;
-    background: #333;
-    box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.25);
-  }
-  /* line 14, ../src/_max_width_720.scss */
-  .js-ready #nav .block {
-    background: transparent;
-  }
-  /* line 18, ../src/_max_width_720.scss */
-  .js-ready #nav .close-btn {
-    display: block;
-    opacity: 0.7;
-  }
-  /* line 22, ../src/_max_width_720.scss */
-  .js-ready #nav .close-btn:focus, .js-ready #nav .close-btn:hover {
-    opacity: 1;
-  }
-  /* line 29, ../src/_max_width_720.scss */
-  .js-ready #inner-wrap {
-    left: 0;
-  }
-
-  /* line 38, ../src/_max_width_720.scss */
-  .js-nav #inner-wrap {
-    left: 70%;
-  }
-
-  /* line 46, ../src/_max_width_720.scss */
-  .csstransforms3d.csstransitions.js-ready #nav {
-    left: 0;
-    transform: translate3d(-100%, 0, 0);
-    backface-visibility: hidden;
-  }
-  /* line 51, ../src/_max_width_720.scss */
-  .csstransforms3d.csstransitions.js-ready #nav .block {
-    opacity: 0.7;
-    transition: opacity 300ms 100ms ease, transform 500ms ease;
-    transform: translate3d(70%, 0, 0) scale3d(0.9, 0.9, 0.9);
-    transform-origin: 50%, 0%;
-  }
-  /* line 60, ../src/_max_width_720.scss */
-  .csstransforms3d.csstransitions.js-ready #inner-wrap {
-    left: 0 !important;
-    transform: translate3d(0, 0, 0);
-    transition: transform 500ms ease;
-    backface-visibility: hidden;
-  }
-
-  /* line 71, ../src/_max_width_720.scss */
-  .csstransforms3d.csstransitions.js-nav #nav .block {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-  /* line 76, ../src/_max_width_720.scss */
-  .csstransforms3d.csstransitions.js-nav #inner-wrap {
-    transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
-  }
 }
